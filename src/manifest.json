@@ -1,0 +1,28 @@
+{
+  "name": "Buka Data",
+  "description": "Data supplier plugin for populating design with real Bukalapak data!",
+  "author": "Afnizar Nur Ghifari",
+  "homepage": "https://github.com/bukalapak/bukadata",
+  "version": "0.0.0",
+  "identifier": "com.bukalapak.bukadata",
+  "appcast": "https://raw.githubusercontent.com/bukalapak/bukadata/master/appcast.xml",
+  "icon": "icon.png",
+  "compatibleVersion": "3.0",
+  "bundleVersion": "1.0",
+  "suppliesData": true,
+  "commands": [
+    {
+      "script": "script.js",
+      "handlers": {
+        "actions": {
+          "Startup": "onStartup",
+          "Shutdown": "onShutdown",
+          "SupplyData": "onSupplyData"
+        }
+      }
+    }
+  ],
+  "menu": {
+    "title": "Buka Data"
+  }
+}
