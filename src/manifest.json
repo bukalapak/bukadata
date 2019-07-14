@@ -1,6 +1,6 @@
 {
   "name": "Buka Data",
-  "description": "Data supplier plugin for populating design with real Bukalapak data!",
+  "description": "Data supplier plugin for populating design with real Bukalapak data.",
   "author": "Afnizar Nur Ghifari",
   "homepage": "https://github.com/bukalapak/bukadata",
   "version": "0.0.0",
@@ -12,6 +12,24 @@
   "suppliesData": true,
   "commands": [
     {
+      "name": "Set API Token",
+      "identifier": "setapi",
+      "script": "script.js",
+      "handler": "onSetAPIToken"
+    },
+    {
+      "name": "About",
+      "identifier": "about",
+      "script": "script.js",
+      "handler": "onAbout"
+    },
+    {
+      "name": "Send Feedback/Ideas",
+      "identifier": "feedbackideas",
+      "script": "script.js",
+      "handler": "onSendFeedbackIdeas"
+    },
+    {
       "script": "script.js",
       "handlers": {
         "actions": {
@@ -19,7 +37,14 @@
           "Shutdown": "onShutdown",
           "SupplyProductName": "onSupplyProductName",
           "SupplyProductCategory": "onSupplyProductCategory",
-          "SupplyProductReview": "onSupplyProductReview"
+          "SupplyProductReview": "onSupplyProductReview",
+          "SupplyFullName": "onSupplyFullName",
+          "SupplyFirstName": "onSupplyFirstName",
+          "SupplyLastName": "onSupplyLastName",
+          "SupplyPhoneNumber": "onSupplyPhoneNumber",
+          "SupplyPhoneNumberMask": "onSupplyPhoneNumberMask",
+          "SupplyProductImage": "onSupplyProductImage",
+          "SupplyProfilePicture": "onSupplyProfilePicture"
         }
       }
     }
@@ -27,8 +52,10 @@
   "menu": {
     "title": "Buka Data",
     "items": [
-      "About",
-      "Send Feedback"
+      "setapi",
+      "-",
+      "about",
+      "feedbackideas"
     ]
   }
 }

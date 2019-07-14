@@ -1,4 +1,5 @@
 const sketch = require('sketch')
+const ui = require('sketch/ui')
 const { DataSupplier } = sketch
 const util = require('util')
 
@@ -6,6 +7,15 @@ export function onStartup () {
   DataSupplier.registerDataSupplier('public.text', 'Product Name', 'SupplyProductName')
   DataSupplier.registerDataSupplier('public.text', 'Product Category', 'SupplyProductCategory')
   DataSupplier.registerDataSupplier('public.text', 'Product Review', 'SupplyProductReview')
+  DataSupplier.registerDataSupplier('public.text', 'Full Name', 'SupplyFullName')
+  DataSupplier.registerDataSupplier('public.text', 'First Name', 'SupplyFirstName')
+  DataSupplier.registerDataSupplier('public.text', 'Last Name', 'SupplyLastName')
+  DataSupplier.registerDataSupplier('public.text', 'Phone Number', 'SupplyPhoneNumber')
+  DataSupplier.registerDataSupplier('public.text', 'Phone Number (Masking)', 'SupplyPhoneNumberMask')
+
+  DataSupplier.registerDataSupplier('public.image', 'Product Image', 'SupplyProductImage')
+  DataSupplier.registerDataSupplier('public.image', 'Profile Picture', 'SupplyProfilePicture')
+
   // DataSupplier.registerDataSupplier('public.text', 'Price', 'SupplyData')
   // DataSupplier.registerDataSupplier('public.text', 'Provinces', 'SupplyData')
   // DataSupplier.registerDataSupplier('public.text', 'Cities', 'SupplyData')
@@ -31,8 +41,19 @@ export function onStartup () {
 }
 
 export function onShutdown () {
-  // Deregister the plugin
   DataSupplier.deregisterDataSuppliers()
+}
+
+export function onSetAPIToken (context) {
+	ui.message("Not yet developed.")
+}
+
+export function onAbout (context) {
+	NSWorkspace.sharedWorkspace().openURL(NSURL.URLWithString("https://github.com/afnizarnur"));
+}
+
+export function onSendFeedbackIdeas (context) {
+	NSWorkspace.sharedWorkspace().openURL(NSURL.URLWithString("https://github.com/afnizarnur"));
 }
 
 export function onSupplyProductName (context) {
@@ -54,6 +75,60 @@ export function onSupplyProductCategory (context) {
 }
 
 export function onSupplyProductReview (context) {
+  let dataKey = context.data.key
+  const items = util.toArray(context.data.items).map(sketch.fromNative)
+  items.forEach((item, index) => {
+    let data = Math.random().toString()
+    DataSupplier.supplyDataAtIndex(dataKey, data, index)
+  })
+}
+
+export function onSupplyFullName (context) {
+  let dataKey = context.data.key
+  const items = util.toArray(context.data.items).map(sketch.fromNative)
+  items.forEach((item, index) => {
+    let data = Math.random().toString()
+    DataSupplier.supplyDataAtIndex(dataKey, data, index)
+  })
+}
+
+export function onSupplyFirstName (context) {
+  let dataKey = context.data.key
+  const items = util.toArray(context.data.items).map(sketch.fromNative)
+  items.forEach((item, index) => {
+    let data = Math.random().toString()
+    DataSupplier.supplyDataAtIndex(dataKey, data, index)
+  })
+}
+
+export function onSupplyLastName (context) {
+  let dataKey = context.data.key
+  const items = util.toArray(context.data.items).map(sketch.fromNative)
+  items.forEach((item, index) => {
+    let data = Math.random().toString()
+    DataSupplier.supplyDataAtIndex(dataKey, data, index)
+  })
+}
+
+export function onSupplyPhoneNumber (context) {
+  let dataKey = context.data.key
+  const items = util.toArray(context.data.items).map(sketch.fromNative)
+  items.forEach((item, index) => {
+    let data = Math.random().toString()
+    DataSupplier.supplyDataAtIndex(dataKey, data, index)
+  })
+}
+
+export function onSupplyPhoneNumberMask (context) {
+  let dataKey = context.data.key
+  const items = util.toArray(context.data.items).map(sketch.fromNative)
+  items.forEach((item, index) => {
+    let data = Math.random().toString()
+    DataSupplier.supplyDataAtIndex(dataKey, data, index)
+  })
+}
+
+export function onSupplyProfilePicture (context) {
   let dataKey = context.data.key
   const items = util.toArray(context.data.items).map(sketch.fromNative)
   items.forEach((item, index) => {
