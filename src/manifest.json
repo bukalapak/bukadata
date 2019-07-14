@@ -17,12 +17,18 @@
         "actions": {
           "Startup": "onStartup",
           "Shutdown": "onShutdown",
-          "SupplyData": "onSupplyData"
+          "SupplyProductName": "onSupplyProductName",
+          "SupplyProductCategory": "onSupplyProductCategory",
+          "SupplyProductReview": "onSupplyProductReview"
         }
       }
     }
   ],
   "menu": {
-    "title": "Buka Data"
+    "title": "Buka Data",
+    "items": [
+      "About",
+      "Send Feedback"
+    ]
   }
 }
