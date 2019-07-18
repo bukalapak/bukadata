@@ -1,6 +1,6 @@
 {
   "name": "Buka Data",
-  "description": "Data supplier plugin for populating design with real Bukalapak data.",
+  "description": "Data supplier plugin for populating design with real data.",
   "author": "Afnizar Nur Ghifari",
   "homepage": "https://github.com/bukalapak/bukadata",
   "version": "0.0.0",
@@ -51,11 +51,6 @@
   ],
   "menu": {
     "title": "Buka Data",
-    "items": [
-      "setapi",
-      "-",
-      "about",
-      "feedbackideas"
-    ]
+    "items": ["setapi", "-", "about", "feedbackideas"]
   }
 }

@@ -5,4 +5,4 @@
 </div>
 
 <h1 align="center">Buka Data</h1>
-<p align="center">Data supplier plugin for populating design with real Bukalapak data!</p>
+<p align="center">Data supplier plugin for populating design with real data.</p>
